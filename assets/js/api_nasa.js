@@ -10,7 +10,15 @@ $(document).ready(function () {
       
       $.ajax(settings).done(function (response) {
         console.log(response);
-        response.results.forEach(elemento => console.log(elemento.name))
+        const results = response.results.slice(0,20)
+        //response.results.forEach(elemento => {
+        results.forEach(function(elemento){
+            console.log(elemento.name)
+            $('#pokedex').append(
+                '<li>' + elemento.name + '</li>'
+              
+            )
+        })
       });
 
 })
