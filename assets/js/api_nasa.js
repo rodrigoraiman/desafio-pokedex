@@ -10,6 +10,7 @@ $(document).ready(function () {
       
       $.ajax(settings).done(function (response) {
         console.log(response);
+        response.results.forEach(elemento => console.log(elemento.name))
       });
 
 })
